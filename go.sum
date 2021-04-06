@@ -1,5 +1,2 @@
-github.com/SonnLarissa/bank v0.0.0-20210405082926-e4e49689d068 h1:Jwvt9c1OxhHA0utozh6KjtPvGLT4EHeDslfRop4Iwjs=
-github.com/SonnLarissa/bank v0.0.0-20210405082926-e4e49689d068/go.mod h1:rYqqk45MiCvwZJFNKKzlPthpeBLVkHthYypG21U46O0=
-github.com/SonnLarissa/bank/v2 v2.0.0/go.mod h1:puSu45WFaR0+tx1ggtgtIODMtDO2IfhKpHCkmozKeTI=
 github.com/SonnLarissa/bank/v2 v2.0.1 h1:vS6dnD2R8UP3fkgaXlQy/CE60NzPl0ya2rUJTB+7dtE=
 github.com/SonnLarissa/bank/v2 v2.0.1/go.mod h1:puSu45WFaR0+tx1ggtgtIODMtDO2IfhKpHCkmozKeTI=

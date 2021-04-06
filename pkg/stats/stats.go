@@ -1,7 +1,6 @@
 package stats
 
 import (
-	"fmt"
 	"github.com/SonnLarissa/bank/v2/pkg/types"
 )
 
