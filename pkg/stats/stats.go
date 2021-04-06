@@ -1,6 +1,7 @@
 package stats
 
 import (
+	"fmt"
 	"github.com/SonnLarissa/bank/v2/pkg/types"
 )
 
@@ -68,4 +69,15 @@ func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money {
 		r[k] = m / types.Money(c)
 	}
 	return r
+}
+
+func PeriodsDynamic(first map[types.Category]types.Money, second map[types.Category]types.Money) map[types.Category]types.Money {
+	res := make(map[types.Category]types.Money)
+	if len(first) >= 0 && len(second) >= 0 {
+		for ind, current := range second {
+			res[ind] = current - first[ind]
+		}
+	}
+	fmt.Println(res)
+	return res
 }
