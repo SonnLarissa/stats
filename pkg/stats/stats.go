@@ -78,6 +78,10 @@ func PeriodsDynamic(first map[types.Category]types.Money, second map[types.Categ
 			res[ind] = current - first[ind]
 		}
 	}
-	fmt.Println(res)
+	for k, v := range first {
+		if _, ok := second[k]; !ok {
+			res[k] = -v
+		}
+	}
 	return res
 }
