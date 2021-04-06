@@ -1,7 +1,7 @@
 package stats
 
 import (
-	"github.com/SonnLarissa/bank/pkg/types"
+	"github.com/SonnLarissa/bank/v2/pkg/bank/types"
 	"reflect"
 	"testing"
 )
@@ -95,16 +95,84 @@ import (
 //}
 
 
-func TestCategoriesTotal(t *testing.T) {
+//func TestCategoriesAvg_nil(t *testing.T) {
+//	var payments []types.Payment
+//	result := CategoriesAvg(payments)
+//	if len(result) != 0 {
+//		t.Error("result len!=0")
+//	}
+//}
+//
+//func TestCategoriesAvg_empty(t *testing.T) {
+//	payments := []types.Payment{}
+//	result := CategoriesAvg(payments)
+//	if len(result) != 0 {
+//		t.Error("result len!=0")
+//	}
+//}
+//
+//func TestCategoriesAvg_notFound(t *testing.T) {
+//	payments := []types.Payment{
+//		{ID: 1, Category: "auto"},
+//		{ID: 2, Category: "food"},
+//		{ID: 3, Category: "auto"},
+//		{ID: 4, Category: "auto"},
+//		{ID: 5, Category: "fun"},
+//	}
+//	result := CategoriesAvg(payments)
+//	if len(result) != 0 {
+//		t.Error("result len !=0")
+//	}
+//}
+//
+//func TestCategoriesAvg_foundOne(t *testing.T) {
+//	payments := []types.Payment{
+//		{ID: 1, Category: "auto"},
+//		{ID: 2, Category: "food"},
+//		{ID: 3, Category: "auto"},
+//		{ID: 4, Category: "auto"},
+//		{ID: 5, Category: "fun"},
+//	}
+//	expected := []types.Payment{
+//		{ID: 2, Category: "food"},
+//	}
+//	result := CategoriesAvg(payments)
+//
+//	if !reflect.DeepEqual(expected, result) {
+//		t.Error("invalid result")
+//	}
+//}
+//
+//func TestFilterByCategory_foundMultiple(t *testing.T) {
+//	payments := []types.Payment{
+//		{ID: 1, Category: "auto"},
+//		{ID: 2, Category: "food"},
+//		{ID: 3, Category: "auto"},
+//		{ID: 4, Category: "auto"},
+//		{ID: 5, Category: "fun"},
+//	}
+//	expected := []types.Payment{
+//		{ID: 1, Category: "auto"},
+//		{ID: 3, Category: "auto"},
+//		{ID: 4, Category: "auto"},
+//	}
+//	result := CategoriesAvg(payments)
+//
+//	if !reflect.DeepEqual(expected, result) {
+//		t.Errorf("Invalid result, expected : %v, actual %v", expected, result)
+//	}
+//}
+
+func TestCategoriesAvg(t *testing.T) {
 	payments := []types.Payment{
-		{ID: 1, Category: "auto", Amount: 10},
+		{ID: 1, Category: "auto", Amount: 2_000_00},
 		{ID: 2, Category: "food", Amount: 2_000_00},
-		{ID: 3, Category: "auto", Amount: 5},
-		{ID: 4, Category: "auto", Amount: 6},
+		{ID: 3, Category: "auto", Amount: 3_000_00},
+		{ID: 4, Category: "auto", Amount: 4_000_00},
 		{ID: 5, Category: "fun", Amount: 5_000_00},
 	}
 	expected := map[types.Category]types.Money{
-		"auto": 7,
+		"auto": 3_000_00,
 		"food": 2_000_00,
 		"fun":  5_000_00,
 	}

@@ -1,7 +1,7 @@
 package stats
 
 import (
-	"github.com/SonnLarissa/bank/pkg/types"
+	"github.com/SonnLarissa/bank/v2/pkg/bank/types"
 )
 
 // Avg рассчитывает среднюю сумму платежа.
